@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { auth, db } from "../firebaseConfig";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { setDoc, doc } from "firebase/firestore";
+import { useNavigate } from "react-router-dom";
 
 function Cadastro() {
   const [email, setEmail] = useState("");
@@ -9,6 +10,7 @@ function Cadastro() {
   const [nome, setNome] = useState("");
   const [sobrenome, setSobrenome] = useState("");
   const [dataNascimento, setDataNascimento] = useState("");
+  const navigate = useNavigate();
 
   const handleCadastro = async () => {
     try {
@@ -28,6 +30,13 @@ function Cadastro() {
     }
   };
 
+  const handleHomeRedirect = () => {
+    navigate("/home"); // Redireciona para a página /about
+  };
+  const handleCadastroRedirect = () => {
+    navigate("/cadastro"); // Redireciona para a página /about
+  };
+
   return (
     <div>
       <h1>Cadastro</h1>
@@ -37,6 +46,10 @@ function Cadastro() {
       <input type="text" placeholder="Sobrenome" onChange={(e) => setSobrenome(e.target.value)} />
       <input type="date" placeholder="Data de Nascimento" onChange={(e) => setDataNascimento(e.target.value)} />
       <button onClick={handleCadastro}>Cadastrar</button>
+      <div>
+        <button onClick={handleHomeRedirect}>Home</button>
+        <button onClick={handleCadastroRedirect}>Cadastro</button>
+      </div>
     </div>
   );
 }

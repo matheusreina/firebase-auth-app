@@ -18,6 +18,13 @@ function Login() {
     }
   };
 
+  const handleHomeRedirect = () => {
+    navigate("/home"); // Redireciona para a página /about
+  };
+  const handleCadastroRedirect = () => {
+    navigate("/cadastro"); // Redireciona para a página /about
+  };
+
   return (
     <div>
       <h1>Login</h1>
@@ -25,6 +32,10 @@ function Login() {
       <input type="password" placeholder="Senha" onChange={(e) => setSenha(e.target.value)} />
       {error && <p>{error}</p>}
       <button onClick={handleLogin}>Entrar</button>
+      <div>
+        <button onClick={handleHomeRedirect}>Home</button>
+        <button onClick={handleCadastroRedirect}>Cadastro</button>
+      </div>
     </div>
   );
 }

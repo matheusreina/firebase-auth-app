@@ -8,8 +8,8 @@ function AppRoutes() {
     <Router>
       <Routes>
         <Route path="/cadastro" element={<Cadastro />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/" element={<Principal />} />
+        <Route path="/" element={<Login />} />
+        <Route path="/home" element={<Principal />} />
       </Routes>
     </Router>
   );
