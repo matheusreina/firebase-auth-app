@@ -33,8 +33,8 @@ function Cadastro() {
   const handleHomeRedirect = () => {
     navigate("/home"); // Redireciona para a página /about
   };
-  const handleCadastroRedirect = () => {
-    navigate("/cadastro"); // Redireciona para a página /about
+  const handleLoginRedirect = () => {
+    navigate("/login"); // Redireciona para a página /about
   };
 
   return (
@@ -48,7 +48,7 @@ function Cadastro() {
       <button onClick={handleCadastro}>Cadastrar</button>
       <div>
         <button onClick={handleHomeRedirect}>Home</button>
-        <button onClick={handleCadastroRedirect}>Cadastro</button>
+        <button onClick={handleLoginRedirect}>Login</button>
       </div>
     </div>
   );
